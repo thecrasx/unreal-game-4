@@ -5,7 +5,6 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "DrawDebugHelpers.h"
 
 
 
@@ -45,14 +44,7 @@ void ATank::Tick(float DeltaTime)
 			HitResult 
 		);
 
-		DrawDebugSphere(
-			GetWorld(),
-			HitResult.ImpactPoint,
-			50, 10,
-			FColor::Red,
-			false
-		);
-
+		RotateTurret(HitResult.ImpactPoint);
 	}
 }
 
